@@ -5,22 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Quiz App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Tech & Data Quiz</title>
 </head>
 <body> 
-    <div class="alert">Alert</div>
-    <div class="btn startBtn">Start</div>
-    <div class="container">
-        <h1>Let's play a Quiz Game</h1>
-        <div class="question"></div>
-        <div class="choices"></div>
-        <button class="btn nextBtn">Next</button>
-        <div class="scoreCard"></div>
-        <div class="timer"></div>
+    
+    <div class="app-container">
+        <div id="start-screen" class="screen active">
+            <div class="icon-pulse"><i class="fas fa-brain"></i></div>
+            <h1>Tech & Data Quiz</h1>
+            <p>Test your knowledge in Python, SQL, OOP, and C Programming.</p>
+            <button class="btn startBtn" id="start-btn">Start Quiz</button>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <span id="question-counter">Question 1 of 10</span>
+                <div class="timer">
+                    <i class="fas fa-stopwatch"></i> <span id="time-left">15</span>s
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+
+            <h2 id="question-text">Question goes here?</h2>
+            <div id="choices-grid" class="choices-grid">
+                </div>
+            
+            <button class="btn nextBtn hidden" id="next-btn">Next Question <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <i class="fas fa-trophy trophy-icon"></i>
+            <h1>Quiz Completed!</h1>
+            <p class="score-text">You scored <span id="final-score">0</span> out of <span id="total-questions">10</span></p>
+            <button class="btn restartBtn" id="restart-btn"><i class="fas fa-redo"></i> Play Again</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
-    <script src="login.js"></script>
-
 </body>
 </html>
